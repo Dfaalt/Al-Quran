@@ -249,7 +249,7 @@ footer {
   }
 
   #surah-container {
-    display: none;
+    display: block;
     width: 100%;
     margin: 0;
     padding: 10px;

@@ -125,15 +125,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const surahContainer = document.getElementById("surah-container");
   const scrollToTopButton = document.getElementById("scroll-to-top");
 
+  // Function to check if the screen is in responsive mode
+  function isResponsiveMode() {
+    return window.innerWidth <= 768;
+  }
+
   // Toggle surah container visibility when menu icon is clicked
   menuIcon.addEventListener("click", function () {
-    surahContainer.classList.toggle("active");
+    if (isResponsiveMode()) {
+      if (
+        surahContainer.style.display === "none" ||
+        !surahContainer.style.display
+      ) {
+        surahContainer.style.display = "block";
+      } else {
+        surahContainer.style.display = "none";
+      }
+    }
   });
 
   // Hide surah container when a list item is clicked
   surahContainer.addEventListener("click", function (event) {
-    if (event.target.tagName === "LI") {
+    if (isResponsiveMode() && event.target.tagName === "LI") {
       surahContainer.classList.remove("active");
+      surahContainer.style.display = "none";
     }
   });
 

@@ -122,8 +122,24 @@ document.addEventListener("DOMContentLoaded", function () {
 // Menampilkan menu-icon surah di layar mobile
 document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = document.getElementById("menu-icon");
+  const searchInput = document.getElementById("search-input");
   const surahContainer = document.getElementById("surah-container");
   const scrollToTopButton = document.getElementById("scroll-to-top");
+
+  // Function to search surah
+  searchInput.addEventListener("input", function () {
+    const query = searchInput.value.toLowerCase();
+    const surahList = surahContainer.querySelectorAll("li");
+
+    surahList.forEach((surah) => {
+      const surahName = surah.textContent.toLowerCase();
+      if (surahName.includes(query)) {
+        surah.style.display = "block";
+      } else {
+        surah.style.display = "none";
+      }
+    });
+  });
 
   // Function to check if the screen is in responsive mode
   function isResponsiveMode() {

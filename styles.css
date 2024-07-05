@@ -12,7 +12,6 @@ header {
   text-align: center;
   padding: 5px;
   position: relative;
-  /* Animation */
   animation: fadeInDown 0.8s ease-out;
 }
 
@@ -39,7 +38,6 @@ header #menu-icon {
 header #menu-icon:hover {
   color: #f9d904;
   transform: scale(1.1);
-  /* Animation */
   animation: pulse 1s infinite;
 }
 
@@ -72,8 +70,19 @@ main {
   max-height: calc(100vh - 140px);
   overflow-y: auto;
   width: 200px;
-  /* Animation */
   animation: slideInLeft 0.5s forwards;
+}
+
+#search-input {
+  padding: 10px;
+  margin: 10px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  background-color: #ddd;
+  border: 1px solid #0b98e4;
+  border-radius: 20px;
 }
 
 @keyframes slideInLeft {
@@ -102,6 +111,10 @@ main {
   100% {
     opacity: 1;
   }
+}
+
+#surah-container h2 {
+  text-align: center;
 }
 
 #surah-container ul {
@@ -218,13 +231,12 @@ footer {
   padding: 10px;
   font-size: 2rem;
   cursor: pointer;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 #scroll-to-top:hover {
   background-color: #00332d;
   transform: scale(1.1);
-  /* Animation */
   animation: bounce 0.6s ease infinite;
 }
 
@@ -240,12 +252,21 @@ footer {
 
 /* Responsive CSS */
 @media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
   header #menu-icon {
     display: block;
+    cursor: pointer;
   }
 
   main {
     flex-direction: column;
+    margin-top: 30px;
   }
 
   #surah-container {
@@ -253,12 +274,15 @@ footer {
     width: 100%;
     margin: 0;
     padding: 10px;
-    position: static;
+    position: fixed;
+    top: 88px;
+    left: 0;
+    bottom: 60px;
+    z-index: 2000;
   }
 
   #surah-container.active {
     display: block;
-    /* Animation */
     animation: slideInUp 0.5s forwards;
   }
 

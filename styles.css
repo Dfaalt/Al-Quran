@@ -216,7 +216,6 @@ footer {
   padding: 10px 0;
   position: relative;
   width: 100%;
-  /* Animation */
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -266,7 +265,7 @@ footer {
 
   main {
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   #surah-container {

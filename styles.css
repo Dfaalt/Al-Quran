@@ -265,7 +265,7 @@ footer {
 
   main {
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 75px;
   }
 
   #surah-container {
@@ -276,7 +276,7 @@ footer {
     position: fixed;
     top: 88px;
     left: 0;
-    bottom: 50px;
+    bottom: 88px;
     z-index: 2000;
   }
 
